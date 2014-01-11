@@ -1,0 +1,52 @@
+﻿body {
+}
+/*TEXT*/
+h1 { 
+    color: blue; 
+    font: bold 4em Arial, Sans-Serif; 
+    letter-spacing: 1px; 
+    width: 1075px; 
+    height: 45px; 
+    }
+
+h2 { 
+    background-color: inherit; 
+    color:blue; 
+    font-size:140%; 
+    font-weight:bold; 
+    margin: 0px 0 10px 0; 
+    padding:0;
+    }
+
+h3 {
+    color:#7ea743; 
+    font-size:120%; 
+    font-weight:bold; 
+    margin: 0px 0 10px 0; 
+    padding:0; 
+    height: 75px; 
+    text-align:center; 
+    width: 1022px;
+    }
+
+h4 { 
+    color:blue; 
+    font-size:100%; 
+    font-weight:bold; 
+    margin: 0px 0 10px 0;
+    padding:0; 
+    height: 25px; 
+    text-align:left;
+    width: 196px;
+    }
+
+/*FOOTER*/
+#footer
+{
+       background: #FFF;
+    color: Blue;
+    height: 43px;
+    text-align: center;
+    font-size: 90%;
+}
+

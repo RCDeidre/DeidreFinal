@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FinalMaster.master.cs" Inherits="DeidreFinal.FinalMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="FinalStyle.css" rel="stylesheet" />
+    <script src="FinalJavaScript.js"></script>
+    <title>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <%--FOOTER START--%>
+        <div id="footer">Copyright &copy; 2014 The Art Farm | Deidre Steenman </div>
+    </form>
+</body>
+</html>
