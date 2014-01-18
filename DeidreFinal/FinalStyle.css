@@ -17,6 +17,7 @@
     height: 43px;
     text-align: center;
     font-size: 90%;
+    margin: auto;
 }
 
 
@@ -40,7 +41,7 @@
 	display: block;
 	padding: 7px 8px;
 	text-decoration: none;
-	border-top: 1px solid #069;
+	
 }
 
 .nav li a:hover {
@@ -52,7 +53,7 @@
 .nav ul {
 	display: none;
 	position: absolute;
-	margin-left: 0px;
+	margin: auto;
 	list-style: none;
 	padding: 0px;
 }
@@ -66,9 +67,9 @@
 	display: block;
 	height: 15px;
 	padding: 7px 8px;
-	color: #fff;
+	color: blue;
 	text-decoration: none;
-	border-bottom: 1px solid blue;
+	
 }
 
 .nav ul li a:hover {

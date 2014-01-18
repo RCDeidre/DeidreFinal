@@ -1,15 +1,23 @@
-﻿/*  jQuery ready function. Specify a function to execute when the DOM is fully loaded.  */
-$(document).ready(
-  /* This is the function that will get executed after the DOM is fully loaded */
-  function () {
-      /* Next part of code handles hovering effect and submenu appearing */
+﻿$(document).ready(function () {
       $(".nav li").hover(
-        function () { //appearing on hover
-            $("ul", this).fadeIn();
-        },
-        function () { //disappearing on hover
-            $("ul", this).fadeOut();
-        }
-      );
+   function () {
+       $("ul", this).fadeIn();
+   },
+   function () {
+       $("ul", this).fadeOut();
+   }
+ );
   }
 );
+
+
+//MyPremade
+//$(document).ready(function () {
+
+//});
+    
+function onAddText() {
+    var cont = document.getElementById("container");
+    var txt = document.getElementById("txtInput").value
+    cont.innerHTML += txt + "<br/>";
+}

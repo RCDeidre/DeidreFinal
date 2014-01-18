@@ -38,7 +38,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DAL_Project">
+      <HintPath>..\..\Users\student\Documents\SCHOOL\Modules\Module 8 Assignment 2\New folder (4)\ArtFarmProd\ArtFarmProd\DAL_Project\bin\Debug\DAL_Project.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MyDlls">
+      <HintPath>..\..\Users\student\Documents\School\Modules\Module 8 Assignment 2\New folder (4)\ArtFarmProd\ArtFarmProd\DAL_Project\bin\Debug\MyDlls.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -57,14 +63,60 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ajax.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="CSS.aspx" />
+    <Content Include="Database.aspx" />
+    <Content Include="Final.aspx" />
     <Content Include="FinalJavaScript.js" />
     <Content Include="FinalStyle.css" />
     <Content Include="Home.aspx" />
+    <Content Include="HTML.aspx" />
     <Content Include="Images\abcworking4.jpg" />
     <Content Include="Images\code3F.jpg" />
+    <Content Include="JavaScript.aspx" />
+    <Content Include="jQuery.aspx" />
+    <Content Include="Security.aspx" />
+    <Content Include="Walking.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebServices.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ajax.aspx.cs">
+      <DependentUpon>Ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ajax.aspx.designer.cs">
+      <DependentUpon>Ajax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CSS.aspx.cs">
+      <DependentUpon>CSS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CSS.aspx.designer.cs">
+      <DependentUpon>CSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database.aspx.cs">
+      <DependentUpon>Database.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Database.aspx.designer.cs">
+      <DependentUpon>Database.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Final.aspx.cs">
+      <DependentUpon>Final.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Final.aspx.designer.cs">
+      <DependentUpon>Final.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FinalMaster.Master.cs">
       <DependentUpon>FinalMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -79,7 +131,49 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HTML.aspx.cs">
+      <DependentUpon>HTML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTML.aspx.designer.cs">
+      <DependentUpon>HTML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JavaScript.aspx.cs">
+      <DependentUpon>JavaScript.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JavaScript.aspx.designer.cs">
+      <DependentUpon>JavaScript.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jQuery.aspx.cs">
+      <DependentUpon>jQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jQuery.aspx.designer.cs">
+      <DependentUpon>jQuery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security.aspx.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security.aspx.designer.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Walking.aspx.cs">
+      <DependentUpon>Walking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Walking.aspx.designer.cs">
+      <DependentUpon>Walking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices.aspx.cs">
+      <DependentUpon>WebServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebServices.aspx.designer.cs">
+      <DependentUpon>WebServices.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="FinalMaster.Master" />

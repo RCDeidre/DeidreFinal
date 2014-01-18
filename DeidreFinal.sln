@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_Project", "DAL_Project\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalClassLibrary", "FinalClassLibrary\FinalClassLibrary.csproj", "{E1686C46-8425-4B70-9E5C-7DCB442366B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{30B2027E-43CC-4A2F-AF7D-84479B422EAF}"
+	ProjectSection(SolutionItems) = preProject
+		FinalAssignment.sql = FinalAssignment.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

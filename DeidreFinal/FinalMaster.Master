@@ -6,45 +6,63 @@
 <head runat="server">
     <link href="FinalStyle.css" rel="stylesheet" />
     <script type="text/javascript" src="FinalJavaScript.js" ></script>
-     
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+<title><asp:ContentPlaceHolder ID="head" runat="server">
  
-    <title>
-        <asp:ContentPlaceHolder ID="head" runat="server">
-        </asp:ContentPlaceHolder>
-    </title>
+        </asp:ContentPlaceHolder></title>
+        
+    
 </head>
 <body>
-    
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        	<div class="navigation">
+     <div>	
+            <div class="navigation">
   		<ul class="nav">
   			<li>
   				<a href="#">Home</a>
   			</li>
   			<li>
-  				<a href="#">Services</a>
+  				<a href="#">Stuff</a>
   				<ul>
-  					<li><a href="#">Consulting</a></li>
-  					<li><a href="#">Sales</a></li>
-  					<li><a href="#">Support</a></li>
+  					<li><a href="Ajax.aspx">Ajax</a></li>
+  					<li><a href="CSS.aspx">CSS</a></li>
+  					<li><a href="Database.aspx">Database</a></li>
   				</ul>
   			</li>
   			<li>
-  				<a href="#">About Us</a>
+  				<a href="#">More Stuff</a>
   				<ul>
-  					<li><a href="#">Company</a></li>
-  					<li><a href="#">Mission</a></li>
-  					<li><a href="#">Contact Information</a></li>
+  					<li><a href="JavaScript.aaspx">JavaScript</a></li>
+  					<li><a href="jQuery.aspx">jQuery</a></li>
+  					<li><a href="HTML.aspx">HTML</a></li>
+  				</ul>
+  			</li>
+              <li>
+  				<a href="#">Even More Stuff</a>
+  				<ul>
+                    <li><a href="Security.aspx">Security</a></li>
+  					<li><a href="Walking.aspx">Walk the DOM</a></li>
+  					<li><a href="WebServices.aspx">Web Services</a></li>
+  					
+  				</ul>
+  			</li>
+              <li>
+  				<a href="#">Admin</a>
+  				<ul>
+  					<li><a href="Admin.aspx">Admin</a></li>
+  					<li><a href="Contact.aspx">Contact</a></li>
+  					<li><a href="Final.aspx">Final</a></li>
   				</ul>
   			</li>
   		</ul>
   	</div>
            
-           
+        </div>    
+  
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+       
         </asp:ContentPlaceHolder>
-    </div>
-        <br />
+    <br /> <br /> <br />
+       
         <%--FOOTER START--%>
      <div id="footer">Copyright &copy; 2014 The Art Farm | Deidre Steenman </div>
   
