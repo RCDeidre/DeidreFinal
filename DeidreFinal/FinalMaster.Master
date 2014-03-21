@@ -1,70 +1,136 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FinalMaster.master.cs" Inherits="DeidreFinal.FinalMaster" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html><%--HTML5 tags--%>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link href="FinalStyle.css" rel="stylesheet" />
-    <script type="text/javascript" src="FinalJavaScript.js" ></script>
-     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
-<title><asp:ContentPlaceHolder ID="head" runat="server">
- 
-        </asp:ContentPlaceHolder></title>
-        
+<head id="Head1" runat="server">
+
+   <script src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script><%--HTML5 tag. To run the latest version of jQuery--%>
+   <script src="FinalJavaScript.js" ></script><%--HTML5 tag. To run the javaScript that you have written--%>
+    <link href="FinalStyles.css" rel="stylesheet" /><%--HTML5 tag. To access the style-sheet page--%>
     
+
+<title><asp:ContentPlaceHolder ID="head" runat="server">
+<%-- When placing the ContentPlaceHolder within the title tag the title of each page, 
+      while navigating the pages, will display in the address bar--%>
+       </asp:ContentPlaceHolder></title>
 </head>
+      
 <body>
-     <div>	
-            <div class="navigation">
+
+   <h1>The Art Farm Final Project</h1>
+    <div>
+     
+      <div class="navigation">
+
   		<ul class="nav">
   			<li>
-  				<a href="#">Home</a>
-  			</li>
-  			<li>
-  				<a href="#">Stuff</a>
-  				<ul>
-  					<li><a href="Ajax.aspx">Ajax</a></li>
-  					<li><a href="CSS.aspx">CSS</a></li>
-  					<li><a href="Database.aspx">Database</a></li>
-  				</ul>
-  			</li>
-  			<li>
-  				<a href="#">More Stuff</a>
-  				<ul>
-  					<li><a href="JavaScript.aaspx">JavaScript</a></li>
-  					<li><a href="jQuery.aspx">jQuery</a></li>
-  					<li><a href="HTML.aspx">HTML</a></li>
-  				</ul>
+  				<a href="Home.aspx">Home</a>
   			</li>
               <li>
-  				<a href="#">Even More Stuff</a>
+  				 <a href="Register.aspx">Register</a><%--//TODO--%>
+  			</li>
+          
+  			<li>
+  				<a href="#">Store</a>
   				<ul>
-                    <li><a href="Security.aspx">Security</a></li>
-  					<li><a href="Walking.aspx">Walk the DOM</a></li>
-  					<li><a href="WebServices.aspx">Web Services</a></li>
-  					
+                    <li><a href="Items.aspx">Items</a></li><%--//TODO--%>
+  					<li><a href="Store.aspx">Store</a></li>
   				</ul>
   			</li>
+  			<li>
+  				<a href="#">Members</a>
+  				<ul>
+                    <li><a href="YourPlace.aspx">Your Place</a></li><%--//TODO--%>
+  					<li><a href="Password.aspx">Change Password</a></li><%--//TODO--%>
+  					<li><a href="Comments.aspx">Comment</a></li><%--//TODO--%>
+  				</ul>
+  			</li>
+              
               <li>
   				<a href="#">Admin</a>
   				<ul>
-  					<li><a href="Admin.aspx">Admin</a></li>
-  					<li><a href="Contact.aspx">Contact</a></li>
-  					<li><a href="Final.aspx">Final</a></li>
+  					<li><a href="Admin.aspx">Admin</a></li><%--//TODO--%>
+  					<li><a href="AdminReports.aspx">Reports</a></li><%--//TODO--%>
   				</ul>
   			</li>
+              <li>
+  				<a href="#" id="ancorLogin">Login</a>
+              </li>
   		</ul>
+          
   	</div>
-           
-        </div>    
+        </div> 
+    <%--pop-up Login starts here--%>
+<div id="wrapper">
+
+<button id="btnLogin">X</button>
+
+<p id="login">LOG IN</p>
+
+<p id ="notLogged">You are currently not logged in! Enter your authentication
+
+credentials below to log in.</p>
+
+<form method="post" action="/contact" id="contact-form">
+
+<fieldset>
+
+<legend></legend>
+<br />
+<div>
+
+<label for="txt">User Name</label>
+
+<input type="text" name="txt" id="txt"/>
+
+</div>
+
+<div>
+
+<label for="psw">Password</label>
+
+<input type="password" name="psw" id="psw" />
+
+</div>
+
+<div class="chk">
+
+Remember Me
+
+<input type="checkbox" id="chkbox" name="chkbox"/>
+
+</div>
+
+<div class="submit">
+
+<input type="submit" name="subm" id="subm" value="Login" onclick="login()"/>
+
+</div>
+
+</fieldset>
+
+<p class="redesign" onclick="pushdown()">You don't have an account yet? Just get one:<a href="Register.aspx">Register</a><br /><br />
+
+Forgotten your password? Get a new one: <a href="Password.aspx">Set new password</a></p>
+
+</form>
+
+</div>
+       
   
+      <%--Everything above here is run off the Master page!--%>
+
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-       
+      <%--Nothing goes in here from the Master Page.
+          This is where the content of each individual page will go when editing on that page.--%>
         </asp:ContentPlaceHolder>
-    <br /> <br /> <br />
-       
-        <%--FOOTER START--%>
-     <div id="footer">Copyright &copy; 2014 The Art Farm | Deidre Steenman </div>
+
+
+      <%--Everything below here is run off the Master page!--%>
+      <br /> <br /> <br />
+      <%--FOOTER START--%>
+      <div id="footer">Copyright &copy; 2014 The Art Farm | Deidre Steenman </div>
   
     
 </body>

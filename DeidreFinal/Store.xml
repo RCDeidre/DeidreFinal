@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfSales xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sales>
+    <ClientID>0</ClientID>
+    <Price>0</Price>
+    <Quantity>0</Quantity>
+    <SubTotalPrice>0</SubTotalPrice>
+  </Sales>
+  <Sales>
+    <ClientID>0</ClientID>
+    <Price>0</Price>
+    <Quantity>0</Quantity>
+    <SubTotalPrice>0</SubTotalPrice>
+  </Sales>
+  <Sales>
+    <ClientID>0</ClientID>
+    <Price>0</Price>
+    <Quantity>0</Quantity>
+    <SubTotalPrice>0</SubTotalPrice>
+  </Sales>
+</ArrayOfSales>

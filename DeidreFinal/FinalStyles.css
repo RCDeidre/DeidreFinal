@@ -1,0 +1,299 @@
+﻿/*Everything on this page dictates how each of your pages will 
+    look and interact with each element on the page*/
+
+
+/*DRY DON'T REPEAT YOURSELF. WHAT WILL BE THE SAME ON EVERY PAGE=======================================*/
+body {
+    background:#FFFFCC;
+    color:blue;
+    text-align:center;
+    font-family: arial;
+    height: 220px;
+}
+h2
+{
+    text-align:center;
+    text-decoration-color:orange;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*How the top part of each page will look*/
+.logo
+{
+    float:left;
+    display: block;
+    margin: 0 auto;
+   
+}
+
+navigation{
+    float:left;
+    /*margin-bottom: 17px;*/
+}
+
+.nav {
+    
+    display: inline-block;
+    width:100%;
+	padding: 0px;
+	list-style: none;
+    height: 150px;
+}
+
+.nav li {
+   	float: left;
+	width:auto;
+    margin: 5px 0;
+	position: relative;
+    top: 10px;
+        }
+
+.nav li a {
+	background:#FFFFCC;
+	color: blue;
+	display: block;
+	padding: 7px 8px;
+	text-decoration: none;
+    /*height: 23px;*/
+    width: 204px;
+}
+
+.nav li a:hover {
+	color: orange;
+}
+
+/*=== submenu of the Navigation unordered list ========================================================*/
+
+.nav ul {
+
+	display: none;
+	position: absolute;
+    margin:0 auto;
+	list-style: none;
+	padding: 0px;
+   
+}
+
+.nav ul li {
+	width:initial;
+}
+
+.nav ul a {
+	display: block;
+	height: 15px;
+	padding: 7px 8px;
+	color: blue;
+	text-decoration: none;
+	}
+
+.nav ul li a:hover {
+	color: orange;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*Login------------------------------------------------------------------------------------------------*/
+
+#wrapper{
+
+color: #111;
+
+width: 620px;
+
+height: auto;
+
+margin: 100px auto 40px auto;
+
+border:1px solid black;
+
+display:none;
+
+background: Lightblue;
+
+}
+#notLogged
+{
+margin-left:10px;
+font-size:1em;
+}
+form{
+
+width: auto;
+
+}
+
+form div{
+
+float: left;
+
+padding: 0 0 0.75em 0;
+
+margin-left:10px;
+
+}
+
+form label{
+
+float: left;
+
+width: 100px;
+
+}
+
+form input{
+
+float: left;
+
+height:1.5em;
+
+padding-right:20%;
+
+}
+
+form input[type="submit"]{
+
+float: none;
+text-align: center;
+padding:4px;
+font-size:1em;
+}
+
+#chkbox{
+
+float:none;
+
+width:auto;
+
+height:auto;
+
+}
+
+form div.submit{
+
+text-align: center;
+
+}
+
+#login{
+
+font-size:1.5em;
+
+color:blue;
+
+margin-left:10px;
+
+}
+
+a:link{
+
+text-decoration:none;
+
+}
+
+a{
+
+color:blue;
+
+}
+
+#btnLogin{
+
+float:right;
+
+color:red;
+
+border:none;
+
+background:none;
+
+font-weight:bold;
+
+font-size:1em;
+
+}
+
+.redesign{
+
+font-size:1em;
+
+margin-left:5em;
+
+}
+
+fieldset{
+
+width:400px;
+
+margin:auto;
+
+}
+/*How each individual page will look if so needed*/
+/*ADMIN================================================================================================*/
+
+/*ADMINREPORTS=========================================================================================*/
+/*COMMENT==============================================================================================*/
+#container{
+     clear:both;
+}
+/*DATABASE=============================================================================================*/
+/*FINAL================================================================================================*/
+/*HOME=================================================================================================*/
+/*ITEMS================================================================================================*/
+/*JAVASCRIPT===========================================================================================*/
+
+/*PASSWORD=============================================================================================*/
+/*REGISTER=============================================================================================*/
+#pnlClientUserReg
+{
+    align-content:center;
+/*Width:272px;*/ 
+
+}
+
+
+
+#registTable
+{
+
+margin-left:150px;
+}
+#pnlRegConfirm
+{
+/*align-content:center;*/
+
+  
+}
+/*SECURITY=============================================================================================*/
+/*STORE================================================================================================*/
+/*WALKING==============================================================================================*/
+/*WEBSERVICES==========================================================================================*/
+/*YOURPLACE============================================================================================*/
+/*=====================================================================================================*/
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*How the bottom of every page will look*/
+/*FOOTER*/
+#footer
+{
+    clear:both;
+    color:blue;
+    height: 23px;
+    text-align: center;
+    font-size: 90%;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+
+
+
+
+
+
+
+

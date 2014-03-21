@@ -37,6 +37,20 @@ SecurityQuestion VARCHAR(50),
 SecurityAnswer VARCHAR(50),
 SecurityLevel VARCHAR(5));
 GO
+CREATE TABLE tbItem
+(ItemID INT IDENTITY(1,1) PRIMARY KEY,
+ItemName VARCHAR(50),
+Price VARCHAR(50)
+)
+GO
+CREATE TABLE tbSales
+(SaleID INT IDENTITY (1,1)PRIMARY KEY,
+Quantity INT,
+TotalSale SMALLMONEY,
+SaleDate DATETIME,
+ClientID INT FOREIGN KEY REFERENCES tbClients(ClientID),
+ItemName VARCHAR(50));
+GO
 CREATE TABLE tbLogin
 (LoginID INT IDENTITY (1,1) PRIMARY KEY,
 UserName VARCHAR(15),
@@ -46,9 +60,11 @@ GO
 CREATE TABLE tbError
 (ErrorID INT IDENTITY (1,1) PRIMARY KEY,
 ErrorMessage VARCHAR(255),
+SaleID INT FOREIGN KEY REFERENCES tbSales(SaleID),
 ClientID INT FOREIGN KEY REFERENCES tbClients(ClientID),
 ErrorTime DATETIME);
 GO
+
 
 /**********************************************************************************/
 /*************************INSERT DATA INTO TABLES**********************************/
@@ -85,4 +101,217 @@ INSERT INTO tbUsers(ClientID,UserName,UserPassword,Email,SecurityQuestion,Securi
 ('12','Scott','1234','scott.wachal@robertsoncollege.net','What was the name of your first pet?','Bobo','1'),
 ('12','Scott','2345','scott.wachal@robertsoncollege.net','What was the name of your first pet?','Bobo','2'),
 ('13','Deidre','1234','deidre.steenman@robertsoncollege.net','What was the name of your first pet?','Skippy','1');
+GO
+/*************************ITEM DATA**********************************************/
+INSERT INTO tbItem (ItemName,Price) VALUES 
+('CD',5.00),('Mouse',5.00),('Desktop',300.00),
+('Laptop',250.00),('Printer',99.99),('Scanner',53.99),
+('Camera',75.99),('PrinterCord',23.99),('PowerBar',29.99);
+GO
+/*************************SALE DATA FOR TESTING,******************************/
+INSERT INTO tbSales(ClientID,ItemName,Quantity,TotalSale,SaleDate)VALUES
+('1','CD','1','5.00','01/01/2014'),
+('1','Mouse','2','10.00','01/01/2014'),
+('1','Desktop','1','300.00','01/01/2014'),
+('1','Laptop','1','250.00','01/01/2014');
+
+GO
+/*************************ERROR DATA FOR TESTING***********************************/
+INSERT INTO tbError(ErrorMessage,ClientID,SaleID,ErrorTime)VALUES
+('This is Test 1','1','1','01/01/2013'),
+('This is Test 2','1','1','01/01/2013');
+GO
+
+
+
+
+
+
+
+/*************************GROUP: USERS(2)******************************************
+**      File: dbFinal Assignment
+**      Desc: spUserPasswordUpdate - Updating User Password
+**			  spRegisterClientUser - Inserting Clients into tbClients and tbUsers from the Client Registration form
+**      Auth: Deidre Steenman
+**      Date: 2014
+***********************************************************************************/
+CREATE PROCEDURE spUserPasswordUpdate
+(
+@UserName VARCHAR(15),
+@UserPassword VARCHAR(8),
+@NewPassword VARCHAR(8)
+)
+AS
+BEGIN
+BEGIN TRANSACTION
+		IF EXISTS(SELECT * FROM tbUsers WHERE UserName = @UserName AND UserPassword = @UserPassword)
+		BEGIN
+		UPDATE tbUsers
+		SET UserPassword = @NewPassword
+		WHERE UserName = @UserName
+		AND UserPassword = @UserPassword
+		END
+				
+		IF @@ERROR = 0
+			COMMIT TRANSACTION
+		ELSE
+			ROLLBACK TRANSACTION
+		
+END	
+--/*TEST Works*/
+--spUserPasswordUpdate @UserName = Scott, @UserPassword = 1234, @NewPassword = 9876
+--GO
+--Select * from tbUsers
+GO
+/**********************************************************************************/
+CREATE PROCEDURE spRegisterClientUser
+(
+@fName VARCHAR(50)= FirstName,
+@lName VARCHAR(50) = LastName,
+@Address VARCHAR(50)= Address,
+@City VARCHAR(50) = City,
+@PostCode VARCHAR(7) = PostCode,
+@Province VARCHAR(2) = Province,
+@Phone VARCHAR(12) = Phone,
+@UserName VARCHAR(15)= UserName,
+@UserPassword VARCHAR(8)= UserPassword,
+@Email VARCHAR(50) = Email,
+@SecQuest VARCHAR(50) = SecurityQuestion,
+@SecAns VARCHAR(50) = SecurityAnswer,
+@SecLevel VARCHAR(2) = '1'
+)
+AS
+BEGIN
+BEGIN TRANSACTION
+		
+		DECLARE @NewClientID INT 
+		BEGIN
+		INSERT INTO tbClients(FirstName,LastName,Address,City,PostCode,Province,Phone)
+		Values(@fName,@lName,@Address,@City,@PostCode,@Province,@Phone);
+		END
+		
+		SET @NewClientID = SCOPE_IDENTITY()
+		 
+		DECLARE @NewUserID INT
+		INSERT INTO tbUsers(UserName,ClientID,UserPassword,Email,SecurityQuestion,SecurityAnswer,SecurityLevel)
+		Values(@UserName,@NewClientID,@UserPassword,@Email,@SecQuest,@SecAns,@SecLevel);
+		
+		IF @@ERROR = 0
+		BEGIN
+			SET @NewClientID = @@IDENTITY
+			SET @NewUserID = @@IDENTITY
+		END
+				
+		IF @@ERROR = 0
+			COMMIT TRANSACTION
+		ELSE
+			ROLLBACK TRANSACTION
+END
+/*TEST Works*/
+/*Not sure how to test this but it works on the web site*/
+GO
+
+
+
+
+/*****************************ADMINISTRAION*****************************************/
+GO
+/****************************GROUP: ADMIN CLIENTS(3)********************************
+**      File: dbFinal Assignment
+**      Desc: spClientUpdate - Add or Update a Client Record
+**			  spClientSelect - Select all Clients with First and Last name combined
+**			  spClientDelete - Deleting Client Records
+**      Auth: Deidre Steenman
+**      Date: 2014
+************************************************************************************/
+CREATE PROCEDURE spClientUpdate
+(
+@ClientID INT = NULL,
+@fName VARCHAR(50) = NULL,
+@lName VARCHAR(50) = NULL,
+@Address VARCHAR(50) = NULL,
+@City VARCHAR(50) = NULL,
+@Province VARCHAR(3) = NULL,
+@PostCode VARCHAR(7) = NULL,
+@Phone VARCHAR(50) = NULL
+)
+AS
+BEGIN
+BEGIN TRANSACTION
+				BEGIN
+						UPDATE tbClients
+						SET FirstName = ISNULL(@fName,FirstName),
+							LastName= ISNULL(@lName,LastName),
+							Address = ISNULL(@Address,Address),
+							City = ISNULL(@City,City),
+							PostCode = ISNULL(@PostCode,PostCode),
+							Province = ISNULL(@Province,Province),
+							Phone = ISNULL(@Phone,Phone)		
+						WHERE ClientID = @ClientID
+				END
+								
+			IF @@ERROR = 0
+			COMMIT TRANSACTION
+		    ELSE
+			ROLLBACK TRANSACTION
+END
+/* TEST Works*/
+--Select * from tbClients
+--GO
+--spClientAddUpdate @ClientID = 4, 
+--				  @lName = 'Weird', 
+--				  @Phone = '306-123-1234'
+GO
+/***********************************************************************************/
+CREATE PROCEDURE spClientSelect
+( 
+@UserName VARCHAR(50),
+@Password VARCHAR(50),
+@ClientID INT = NULL
+)
+AS
+BEGIN
+		IF EXISTS(SELECT UserName FROM tbUsers WHERE UserName = @UserName AND UserPassword = @Password AND SecurityLevel = '2')
+		SELECT * FROM tbClients
+        WHERE ClientID = ISNULL(@ClientID,ClientID)			
+END
+
+/* TEST Works*/
+--spClientSelect will not work without UserName and Password
+--GO
+--spClientSelect @UserName = Scott, @Password = 2345
+GO
+/***********************************************************************************/
+CREATE PROCEDURE spClientDelete
+(
+@ClientID INT = NULL,
+@SaleID INT = NULL
+)
+AS
+BEGIN
+BEGIN TRANSACTION
+
+		 IF NOT EXISTS (SELECT * FROM tbSales WHERE ClientID = @ClientID)
+			BEGIN
+				DELETE FROM tbClients WHERE ClientID = @ClientID  
+				DELETE FROM tbUsers WHERE tbUsers.ClientID = @ClientID
+			END
+		ELSE
+		DECLARE @NewErrorID INT 
+		   BEGIN
+				INSERT INTO tbError(ErrorMessage,ClientID,SaleID,ErrorTime)
+				VALUES('ERROR, CLIENT CAN NOT BE DELETED, SALE IN PROGRESS',@ClientID,@SaleID,GETDATE())
+		   END		
+
+		IF @@ERROR = 0
+			COMMIT TRANSACTION
+		ELSE
+			ROLLBACK TRANSACTION
+END	
+/* TEST Works*/
+--spClientDelete @ClientID = 11 
+--GO
+--Select * from tbClients
+--GO
+--Select * from tbError
 GO

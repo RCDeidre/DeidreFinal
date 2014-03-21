@@ -4,5 +4,7 @@ The Art Farm
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script src="FinalJavaScript.js"></script>
+    <h2>Software Development</h2>
+
+  
 </asp:Content>

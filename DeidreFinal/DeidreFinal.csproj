@@ -63,59 +63,50 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Ajax.aspx" />
-    <Content Include="Contact.aspx" />
-    <Content Include="CSS.aspx" />
-    <Content Include="Database.aspx" />
-    <Content Include="Final.aspx" />
+    <Content Include="Admin.aspx" />
+    <Content Include="AdminReports.aspx" />
+    <Content Include="Comments.aspx" />
+    <Content Include="Items.aspx" />
     <Content Include="FinalJavaScript.js" />
-    <Content Include="FinalStyle.css" />
+    <Content Include="FinalStyles.css" />
     <Content Include="Home.aspx" />
-    <Content Include="HTML.aspx" />
-    <Content Include="Images\abcworking4.jpg" />
+    <Content Include="Password.aspx" />
     <Content Include="Images\code3F.jpg" />
-    <Content Include="JavaScript.aspx" />
-    <Content Include="jQuery.aspx" />
-    <Content Include="Security.aspx" />
-    <Content Include="Walking.aspx" />
+    <Content Include="YourPlace.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Store.aspx" />
+    <Content Include="Store.xml" />
     <Content Include="Web.config" />
-    <Content Include="WebServices.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ajax.aspx.cs">
-      <DependentUpon>Ajax.aspx</DependentUpon>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Ajax.aspx.designer.cs">
-      <DependentUpon>Ajax.aspx</DependentUpon>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="AdminReports.aspx.cs">
+      <DependentUpon>AdminReports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="AdminReports.aspx.designer.cs">
+      <DependentUpon>AdminReports.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CSS.aspx.cs">
-      <DependentUpon>CSS.aspx</DependentUpon>
+    <Compile Include="ConnToDatabase.cs" />
+    <Compile Include="Comments.aspx.cs">
+      <DependentUpon>Comments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CSS.aspx.designer.cs">
-      <DependentUpon>CSS.aspx</DependentUpon>
+    <Compile Include="Comments.aspx.designer.cs">
+      <DependentUpon>Comments.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Database.aspx.cs">
-      <DependentUpon>Database.aspx</DependentUpon>
+    <Compile Include="Items.aspx.cs">
+      <DependentUpon>Items.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Database.aspx.designer.cs">
-      <DependentUpon>Database.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Final.aspx.cs">
-      <DependentUpon>Final.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Final.aspx.designer.cs">
-      <DependentUpon>Final.aspx</DependentUpon>
+    <Compile Include="Items.aspx.designer.cs">
+      <DependentUpon>Items.aspx</DependentUpon>
     </Compile>
     <Compile Include="FinalMaster.Master.cs">
       <DependentUpon>FinalMaster.Master</DependentUpon>
@@ -131,48 +122,34 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HTML.aspx.cs">
-      <DependentUpon>HTML.aspx</DependentUpon>
+    <Compile Include="Password.aspx.cs">
+      <DependentUpon>Password.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HTML.aspx.designer.cs">
-      <DependentUpon>HTML.aspx</DependentUpon>
+    <Compile Include="Password.aspx.designer.cs">
+      <DependentUpon>Password.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JavaScript.aspx.cs">
-      <DependentUpon>JavaScript.aspx</DependentUpon>
+    <Compile Include="YourPlace.aspx.cs">
+      <DependentUpon>YourPlace.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="JavaScript.aspx.designer.cs">
-      <DependentUpon>JavaScript.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="jQuery.aspx.cs">
-      <DependentUpon>jQuery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="jQuery.aspx.designer.cs">
-      <DependentUpon>jQuery.aspx</DependentUpon>
+    <Compile Include="YourPlace.aspx.designer.cs">
+      <DependentUpon>YourPlace.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security.aspx.cs">
-      <DependentUpon>Security.aspx</DependentUpon>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Security.aspx.designer.cs">
-      <DependentUpon>Security.aspx</DependentUpon>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Walking.aspx.cs">
-      <DependentUpon>Walking.aspx</DependentUpon>
+    <Compile Include="Store.aspx.cs">
+      <DependentUpon>Store.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Walking.aspx.designer.cs">
-      <DependentUpon>Walking.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebServices.aspx.cs">
-      <DependentUpon>WebServices.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebServices.aspx.designer.cs">
-      <DependentUpon>WebServices.aspx</DependentUpon>
+    <Compile Include="Store.aspx.designer.cs">
+      <DependentUpon>Store.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -184,7 +161,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FinalClassLibrary\FinalClassLibrary.csproj">
+      <Project>{e1686c46-8425-4b70-9e5c-7dcb442366b5}</Project>
+      <Name>FinalClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
