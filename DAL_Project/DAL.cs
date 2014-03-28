@@ -9,7 +9,8 @@ namespace DAL_Project
 {
     public class DAL
     {
-        string ConnString;
+       
+        public string ConnString;
         List<SqlParameter> _parameters;
 
         public DAL(string connString)

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FinalMaster.Master" AutoEventWireup="true" CodeBehind="Store.aspx.cs" Inherits="DeidreFinal.Store" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 The Art Farm - Store
 </asp:Content>

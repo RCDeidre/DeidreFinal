@@ -695,3 +695,4 @@ BEGIN TRANSACTION
 END	
 GO
 Select *  from tbClients
+Select *  from tbUsers

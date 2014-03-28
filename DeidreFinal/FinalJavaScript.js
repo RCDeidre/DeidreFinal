@@ -40,22 +40,42 @@ function onAddText() {
 
 //Login Script//
 
-window.onload = function () {
-    document.getElementById("ancorLogin").onclick = popup;
-    document.getElementById("btnLogin").onclick = pushdown;
+//window.onload = function () {
+//    document.getElementById("ancorLogin").onclick = popup;
+//    document.getElementById("btnLogin").onclick = pushdown;
 
-};
+//};
 
-function popup() {
-    document.getElementById("wrapper").style.display = "block";
-}
+//function popup() {
+//    document.getElementById("wrapper").style.display = "block";
+//}
 
-function pushdown() {
-    document.getElementById("wrapper").style.display = "none";
-}
+//function pushdown() {
+//    document.getElementById("wrapper").style.display = "none";
+//}
 
-function login() {
-    document.getElementById("subm").style.display = "none";
+//function login() {
+//    document.getElementById("subm").style.display = "none";
+//}
 
-}
 
+//checking User and Password from Database//
+//function signin() {
+//    var connection = new ActiveXObject("ADODB.Connection");
+
+//    var connectionstring = "@Data Source=localhost;Initial Catalog=dbDeidreFinalAssign;Integrated Security=SSPI";
+
+//    connection.Open(connectionstring);
+//    var rs = new ActiveXObject("ADODB.Recordset");
+
+//    rs.Open("spSignIn", connection);
+//    rs.MoveFirst
+//    while (!rs.eof) {
+//        document.write(rs.fields(1));
+//        rs.movenext;
+//    }
+
+//    rs.close;
+//    connection.close;
+
+//}

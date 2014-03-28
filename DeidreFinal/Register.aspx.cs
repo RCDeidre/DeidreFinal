@@ -94,11 +94,7 @@ namespace DeidreFinal
             client.Send(message);
         }
 
-        protected void txtPostCode_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
        
     }
 }

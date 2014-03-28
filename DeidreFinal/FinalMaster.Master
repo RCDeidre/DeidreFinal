@@ -15,9 +15,10 @@
       while navigating the pages, will display in the address bar--%>
        </asp:ContentPlaceHolder></title>
 </head>
-      
-<body>
 
+<body>
+    <form id="form1" runat="server">
+       
    <h1>The Art Farm Final Project</h1>
     <div>
      
@@ -25,44 +26,83 @@
 
   		<ul class="nav">
   			<li>
-  				<a href="Home.aspx">Home</a>
+                  <asp:LinkButton ID="lbnHome" runat="server">Home</asp:LinkButton>
+  				
   			</li>
               <li>
-  				 <a href="Register.aspx">Register</a><%--//TODO--%>
+                  <asp:LinkButton ID="lbnRegister" runat="server">Register</asp:LinkButton>
+  				 
   			</li>
           
-  			<li>
-  				<a href="#">Store</a>
+  			<li><asp:LinkButton ID="lbnStore" runat="server">Store</asp:LinkButton>
+  				
   				<ul>
                     <li><a href="Items.aspx">Items</a></li><%--//TODO--%>
   					<li><a href="Store.aspx">Store</a></li>
   				</ul>
   			</li>
   			<li>
-  				<a href="#">Members</a>
+  				<asp:LinkButton ID="lbnMembers" runat="server" OnClick="lbnMembers_Click">Members</asp:LinkButton>
   				<ul>
-                    <li><a href="YourPlace.aspx">Your Place</a></li><%--//TODO--%>
+                    <li><a href="Members.aspx">Members</a></li><%--//TODO--%>
   					<li><a href="Password.aspx">Change Password</a></li><%--//TODO--%>
   					<li><a href="Comments.aspx">Comment</a></li><%--//TODO--%>
   				</ul>
   			</li>
-              
+               <li>
+                   <asp:LinkButton ID="ancorLogin" runat="server" OnClick="ancorLogin_Click">Login</asp:LinkButton>
+  				
+              </li>
               <li>
-  				<a href="#">Admin</a>
+                  <asp:LinkButton ID="lbnAdmin" runat="server">Admin</asp:LinkButton>
+  				
   				<ul>
-  					<li><a href="Admin.aspx">Admin</a></li><%--//TODO--%>
+  					
+                    <li><a href="Admin.aspx">Clients</a></li><%--//TODO--%>
+                    <li><a href="AdminUsers.aspx">Users</a></li><%--//TODO--%>
+                    <li><a href="AdminItems.aspx">Items</a></li><%--//TODO--%>
   					<li><a href="AdminReports.aspx">Reports</a></li><%--//TODO--%>
+                    <li><a href="AdminLogin.aspx">Login</a></li><%--//TODO--%>
+                    <li><a href="AdminErrors.aspx">Errors</a></li><%--//TODO--%>
+                    
+                    
+                    
   				</ul>
   			</li>
-              <li>
-  				<a href="#" id="ancorLogin">Login</a>
-              </li>
+             
   		</ul>
           
   	</div>
         </div> 
+    <br />  <asp:Label ID="lblNotSignedIn" runat="server" ></asp:Label><asp:Label ID="lblYouAre" runat="server" ></asp:Label>
+         <br />
+        <asp:Panel ID="pnlSignedIn" runat="server" Width="327px">User Name
+                        <asp:TextBox ID="txtUserName" runat="server" Width="98px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvUserName" runat="server" 
+                                ControlToValidate="txtUserName" ErrorMessage="" ForeColor="Red"><br />User Name does not match!</asp:RequiredFieldValidator>
+                        <br />
+                        Password
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="105px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" 
+                                ControlToValidate="txtPassword" ErrorMessage="" ForeColor="Red"><br />Password does not match!</asp:RequiredFieldValidator>
+                        <br />
+            
+                        
+                        <asp:Button ID="btnSignIn" runat="server" Text="Sign In" 
+                            onclick="btnSignIn_Click" /><br />
+            <asp:Label ID="lblErrorSignIn" runat="server" text=""></asp:Label>
+            <br />
+                        <asp:CheckBox ID="chxStaySignedIn" runat="server" Text=" Remember Me!" />
+                        </asp:Panel>
+        <asp:Panel ID="pnlSignedOut" runat="server">
+                <asp:Button ID="btnSignOut" runat="server" Text="Sign Out" OnClick="btnSignOut_Click" />
+            </asp:Panel>
+
+
+
+
     <%--pop-up Login starts here--%>
-<div id="wrapper">
+        <%--<div id="wrapper">
 
 <button id="btnLogin">X</button>
 
@@ -72,40 +112,37 @@
 
 credentials below to log in.</p>
 
-<form method="post" action="/contact" id="contact-form">
-
 <fieldset>
 
-<legend></legend>
+<legend>Login</legend>
 <br />
 <div>
 
 <label for="txt">User Name</label>
 
-<input type="text" name="txt" id="txt"/>
-
-</div>
+<%--<input type="text" name="txt" id="txt"/>--%>
+<%--<asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>--%>
+<%--</div>
 
 <div>
 
 <label for="psw">Password</label>
 
-<input type="password" name="psw" id="psw" />
-
-</div>
+<%--<input type="password" name="psw" id="psw" />--%>
+    <%--<asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>--%>
+<%--</div>
 
 <div class="chk">
 
-Remember Me
+Remember Me--%>
 
-<input type="checkbox" id="chkbox" name="chkbox"/>
-
+<%--<input type="checkbox" id="chkbox" name="chkbox"/>--%>
+  <%--  
 </div>
 
 <div class="submit">
 
-<input type="submit" name="subm" id="subm" value="Login" onclick="login()"/>
-
+    <asp:Button ID="btnSignIn" runat="server" Text="Login" Height="38px" OnClick="btnSignIn_Click" />
 </div>
 
 </fieldset>
@@ -114,10 +151,8 @@ Remember Me
 
 Forgotten your password? Get a new one: <a href="Password.aspx">Set new password</a></p>
 
-</form>
-
-</div>
-       
+</div>--%>
+    
   
       <%--Everything above here is run off the Master page!--%>
 
@@ -128,9 +163,14 @@ Forgotten your password? Get a new one: <a href="Password.aspx">Set new password
 
 
       <%--Everything below here is run off the Master page!--%>
-      <br /> <br /> <br />
+      <br /> 
+        
+        <br /> <br />
       <%--FOOTER START--%>
       <div id="footer">Copyright &copy; 2014 The Art Farm | Deidre Steenman </div>
+  
+    
+    </form>
   
     
 </body>

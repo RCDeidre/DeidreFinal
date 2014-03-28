@@ -10,7 +10,7 @@
 namespace DeidreFinal {
     
     
-    public partial class HTML {
+    public partial class Password {
         
         /// <summary>
         /// txtEmail control.
@@ -20,15 +20,6 @@ namespace DeidreFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-        
-        /// <summary>
-        /// pnlChangePassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlChangePassword;
         
         /// <summary>
         /// lblErrorSignIn control.
@@ -47,6 +38,15 @@ namespace DeidreFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlNotSignedIn;
+        
+        /// <summary>
+        /// pnlChangePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlChangePassword;
         
         /// <summary>
         /// lblUserName control.
@@ -209,5 +209,23 @@ namespace DeidreFinal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStatus;
+        
+        /// <summary>
+        /// pnlPassUpdateConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlPassUpdateConfirm;
+        
+        /// <summary>
+        /// lblUpdateConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUpdateConfirm;
     }
 }

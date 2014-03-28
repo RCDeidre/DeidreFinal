@@ -42,9 +42,6 @@
       <HintPath>..\..\Users\student\Documents\SCHOOL\Modules\Module 8 Assignment 2\New folder (4)\ArtFarmProd\ArtFarmProd\DAL_Project\bin\Debug\DAL_Project.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MyDlls">
-      <HintPath>..\..\Users\student\Documents\School\Modules\Module 8 Assignment 2\New folder (4)\ArtFarmProd\ArtFarmProd\DAL_Project\bin\Debug\MyDlls.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -64,7 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="AdminErrors.aspx" />
+    <Content Include="AdminItems.aspx" />
+    <Content Include="AdminLogin.aspx" />
     <Content Include="AdminReports.aspx" />
+    <Content Include="AdminUsers.aspx" />
     <Content Include="Comments.aspx" />
     <Content Include="Items.aspx" />
     <Content Include="FinalJavaScript.js" />
@@ -72,7 +73,7 @@
     <Content Include="Home.aspx" />
     <Content Include="Password.aspx" />
     <Content Include="Images\code3F.jpg" />
-    <Content Include="YourPlace.aspx" />
+    <Content Include="Members.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Store.aspx" />
     <Content Include="Store.xml" />
@@ -86,6 +87,27 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminErrors.aspx.cs">
+      <DependentUpon>AdminErrors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminErrors.aspx.designer.cs">
+      <DependentUpon>AdminErrors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminItems.aspx.cs">
+      <DependentUpon>AdminItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminItems.aspx.designer.cs">
+      <DependentUpon>AdminItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminReports.aspx.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -93,13 +115,22 @@
     <Compile Include="AdminReports.aspx.designer.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConnToDatabase.cs" />
+    <Compile Include="AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Comments.aspx.cs">
       <DependentUpon>Comments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Comments.aspx.designer.cs">
       <DependentUpon>Comments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConnToDatabase.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Items.aspx.cs">
       <DependentUpon>Items.aspx</DependentUpon>
@@ -129,12 +160,12 @@
     <Compile Include="Password.aspx.designer.cs">
       <DependentUpon>Password.aspx</DependentUpon>
     </Compile>
-    <Compile Include="YourPlace.aspx.cs">
-      <DependentUpon>YourPlace.aspx</DependentUpon>
+    <Compile Include="Members.aspx.cs">
+      <DependentUpon>Members.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="YourPlace.aspx.designer.cs">
-      <DependentUpon>YourPlace.aspx</DependentUpon>
+    <Compile Include="Members.aspx.designer.cs">
+      <DependentUpon>Members.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">

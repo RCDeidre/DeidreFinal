@@ -28,8 +28,9 @@ namespace DeidreFinal
 
                 if (!IsPostBack || Session["cart"] == null)
                 {
+                    DAL_Project.DAL d = new DAL_Project.DAL(@"Data Source=localhost;Initial Catalog=dbDeidreFinalAssign;Integrated Security=SSPI");
                     Session["cart"] = new SalesList();
-                    ListViewItem.DataSource = ConnToDatabase.dal.ExecuteProcedure("spGetItem");
+                    ListViewItem.DataSource = d.ExecuteProcedure("spGetItem");
                     ListViewItem.DataBind();
                 }
                 listOfSales = (SalesList)Session["cart"];
@@ -138,8 +139,9 @@ namespace DeidreFinal
         {
             DataSet ds = new DataSet();
             string clientId = (string)Session["ClientID"];
-            ConnToDatabase.dal.AddParam("@ClientID", clientId);
-            ds = ConnToDatabase.dal.ExecuteProcedure("spGetEmail");
+            DAL_Project.DAL d = new DAL_Project.DAL(@"Data Source=localhost;Initial Catalog=dbDeidreFinalAssign;Integrated Security=SSPI");
+            d.AddParam("@ClientID", clientId);
+            ds = d.ExecuteProcedure("spGetEmail");
             return ds.Tables[0].Rows[0]["Email"].ToString();
         }
         protected void BtnSubmit_Click(object sender, EventArgs e)
@@ -149,11 +151,12 @@ namespace DeidreFinal
                 string clientID = (string)Session["ClientID"];
                 foreach (ItemSales item in listOfSales.Sales)
                 {
-                    ConnToDatabase.dal.AddParam("@ClientID", clientID);
-                    ConnToDatabase.dal.AddParam("@Item", item.item);
-                    ConnToDatabase.dal.AddParam("@TotalSale", item.SubTotalPrice.ToString());
-                    ConnToDatabase.dal.AddParam("@Quantity", item.Quantity.ToString());
-                    ConnToDatabase.dal.ExecuteProcedure("spItemSalesOrder");
+                    DAL_Project.DAL d = new DAL_Project.DAL(@"Data Source=localhost;Initial Catalog=dbDeidreFinalAssign;Integrated Security=SSPI");
+                    d.AddParam("@ClientID", clientID);
+                    d.AddParam("@Item", item.item);
+                    d.AddParam("@TotalSale", item.SubTotalPrice.ToString());
+                    d.AddParam("@Quantity", item.Quantity.ToString());
+                    d.ExecuteProcedure("spItemSalesOrder");
                 }
 
             }
