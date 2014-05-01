@@ -50,9 +50,14 @@ namespace FinalClassLibrary
         }
 
 
-        public void SaveToDatabase(string clientId)
+        public void SaveToDatabase(string clientId, string Item, string SubTotalPrice, string Quantity)
         {
-            //have to do this
+            DAL_Project.DAL dal = new DAL_Project.DAL("Data Source=localhost;Initial Catalog=dbDeidreFinalAssign;Integrated Security=SSPI");
+            dal.AddParam("@ClientID", clientId);
+            dal.AddParam("@Item", Item);
+            dal.AddParam("@TotalSale", SubTotalPrice);
+            dal.AddParam("@Quantity", Quantity);
+            dal.ExecuteProcedure("spItemSalesOrder");
         }
     }
 }

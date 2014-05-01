@@ -47,6 +47,7 @@
                     <li><a href="Members.aspx">Members</a></li><%--//TODO--%>
   					<li><a href="Password.aspx">Change Password</a></li><%--//TODO--%>
   					<li><a href="Comments.aspx">Comment</a></li><%--//TODO--%>
+<li><a href="http://localhost:56186/Resume.aspx">Resume</a></li><%--//TODO--%>
   				</ul>
   			</li>
                <li>

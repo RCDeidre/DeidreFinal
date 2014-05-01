@@ -67,12 +67,16 @@
     <Content Include="AdminReports.aspx" />
     <Content Include="AdminUsers.aspx" />
     <Content Include="Comments.aspx" />
+    <Content Include="Images\airpaint.jpg" />
+    <Content Include="Images\code.png" />
+    <Content Include="Images\code3F.png" />
+    <Content Include="Images\imagesE6BGLUN0.png" />
+    <Content Include="Images\imagesVE277NJK.jpg" />
     <Content Include="Items.aspx" />
     <Content Include="FinalJavaScript.js" />
     <Content Include="FinalStyles.css" />
     <Content Include="Home.aspx" />
     <Content Include="Password.aspx" />
-    <Content Include="Images\code3F.jpg" />
     <Content Include="Members.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Store.aspx" />
@@ -129,8 +133,8 @@
     <Compile Include="Comments.aspx.designer.cs">
       <DependentUpon>Comments.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConnToDatabase.cs">
-      <SubType>Code</SubType>
+    <Compile Include="FinalHandler1.ashx.cs">
+      <DependentUpon>FinalHandler1.ashx</DependentUpon>
     </Compile>
     <Compile Include="Items.aspx.cs">
       <DependentUpon>Items.aspx</DependentUpon>
@@ -185,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FinalMaster.Master" />
+    <Content Include="FinalHandler1.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

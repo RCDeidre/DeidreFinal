@@ -11,7 +11,11 @@ namespace DeidreFinal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["ClientID"] == null)
+            {
+                Response.Redirect("Home.aspx");
+            }
+           
         }
     }
 }

@@ -131,9 +131,9 @@ namespace DeidreFinal
 
         protected void lbnMembers_Click(object sender, EventArgs e)
         {
-            if (Session["ClientID"] != null)
+            if (Session["ClientID"] == null)
             {
-                Response.Redirect("YourPlace.aspx");
+                Response.Redirect("Home.aspx");
             }
             else
             {

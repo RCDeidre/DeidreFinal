@@ -1,10 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FinalMaster.Master" AutoEventWireup="true" CodeBehind="Comments.aspx.cs" Inherits="DeidreFinal.Contact" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    The Art Farm - Comments
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br/>
+﻿<%@ Page Title="" Language="C#"  AutoEventWireup="true" CodeBehind="Comments.aspx.cs" Inherits="DeidreFinal.Contact" %>
+<head runat="server">
+    <title>The Art Farm - Comments</title>
+    <link href="FinalStyles.css" rel="stylesheet" />
+    <style type="text/css">
+        #txtInputOne
+        {
+            width: 337px;
+        }
+    </style>
+</head> <br/>
     <h2>Comments</h2>
    <br/>
   <div id="container">
@@ -12,17 +16,20 @@
         Deidre Steenman<br/>
         E-mail: deidre.steenman@robertsoncollege.net<br/>or
         deidre.steenman@gmail.com</p>
-    <p>
-        Address:</p>
-    <p>
-        Phone:</p>
-    <p>
-        &nbsp;</p>
-    <input type="text" id="txtInput"/>
-<input id="btnComment" type="button" value="Leave a Comment!" onclick="onAddText()" />
-    <br/>
+   </div> 
+<form id="form2" runat="server" action="FinalHandler1.ashx" onsubmit="return validateForm()" method="post">
+   <div>
 
-   <br/>
-    </div>
-    
-</asp:Content>
+<input type="text" id="txtInputOne" runat="server" /><br />
+<input id="btnSubmit" type="submit" value="Leave a Comment!"/>  
+ </div>
+   </form>
+<script>
+    function validateForm() {
+        var txtInput = document.forms["form2"]["txtInputOne"].value;
+        if (!txtInput) {
+            alert("You didn't comment!");
+            return false
+        }
+    }
+</script>

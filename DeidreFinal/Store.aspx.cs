@@ -19,6 +19,11 @@ namespace DeidreFinal
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["ClientID"] == null)
+            {
+                Response.Redirect("Home.aspx");
+            }
+                        
             if (Session["SecurityLevel"] != null && Session["SecurityLevel"].ToString() == "1")
             {
                 pnlCheckOut.Visible = false;

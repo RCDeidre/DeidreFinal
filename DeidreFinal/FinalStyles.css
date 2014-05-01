@@ -4,11 +4,11 @@
 
 /*DRY DON'T REPEAT YOURSELF. WHAT WILL BE THE SAME ON EVERY PAGE=======================================*/
 body {
-    background:#FFFFCC;
+    background:lightyellow;
     color:blue;
     text-align:center;
     font-family: arial;
-    height: 220px;
+    /*height: 220px;*/
 }
 h2
 {
@@ -31,13 +31,6 @@ h2
 }
 /*-----------------------------------------------------------------------------------------------------*/
 /*How the top part of each page will look*/
-.logo
-{
-    float:left;
-    display: block;
-    margin: 0 auto;
-   
-}
 
 navigation
 {

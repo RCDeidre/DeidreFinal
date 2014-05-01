@@ -5,4 +5,5 @@ The Art Farm - Admin Login
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Login</h2>
+     Same as Admin for Clients
 </asp:Content>

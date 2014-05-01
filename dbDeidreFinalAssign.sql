@@ -330,12 +330,13 @@ GO
 
 
 
-/****************************GROUP: ADMIN CLIENTS(3)********************************
+/****************************GROUP: ADMIN CLIENTS(4)********************************
 ************************************************************************************
 **      File: dbDeidreFinalAssign
 **      Desc: spClientUpdate - Add or Update a Client Record
 **			  spClientSelect - Select all Clients with First and Last name combined
 **			  spClientDelete - Deleting Client Records
+**			  spClientSelectAll
 **      Auth: Deidre Steenman
 **      Date: 2014
 ***********************************************************************************/
@@ -378,15 +379,22 @@ END
 --				  @Phone = '306-123-1234'
 GO
 /**********************************************************************************/
+CREATE PROCEDURE spClientSelectAll
+AS
+BEGIN
+	SELECT * FROM tbClients
+END
+GO
+/**********************************************************************************/
 CREATE PROCEDURE spClientSelect
 ( 
-@UserName VARCHAR(50),
-@Password VARCHAR(50),
+--@UserName VARCHAR(50),
+--@Password VARCHAR(50),
 @ClientID INT = NULL
 )
 AS
 BEGIN
-		IF EXISTS(SELECT UserName FROM tbUsers WHERE UserName = @UserName AND UserPassword = @Password AND SecurityLevel = '2')
+		--IF EXISTS(SELECT UserName FROM tbUsers WHERE UserName = @UserName AND UserPassword = @Password AND SecurityLevel = '2')
 		SELECT * FROM tbClients
         WHERE ClientID = ISNULL(@ClientID,ClientID)			
 END
@@ -696,3 +704,4 @@ END
 GO
 Select *  from tbClients
 Select *  from tbUsers
+Select * from tbError
